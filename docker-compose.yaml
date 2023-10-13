@@ -1,0 +1,44 @@
+version: '3'
+services:
+  reverse-proxy:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    image: nginx-fc:latest
+    container_name: nginx-fc
+    networks:
+      - node-network
+    ports:
+      - "8080:80"
+    depends_on:
+     - app
+    restart: always
+
+  app:
+    build:
+      context: ./node
+      dockerfile: Dockerfile.prod
+    image: node-fc:latest
+    container_name: node-fc
+    networks:
+      - node-network
+    depends_on:
+     - db
+    restart: on-failure
+
+  db:
+    build:
+      context: ./mysql
+      dockerfile: Dockerfile
+    image: mysql-fc:latest
+    container_name: mysql-fc
+    networks:
+      - node-network
+    restart: always
+    environment:
+      - MYSQL_DATABASE=nodedb
+      - MYSQL_ROOT_PASSWORD=root
+
+networks:
+  node-network:
+    driver: bridge
