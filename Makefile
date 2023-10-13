@@ -19,7 +19,7 @@ build-node-prod:
 	docker build -t node-fc:latest -f node/Dockerfile.prod node/
 
 run-node:
-	docker run --rm -it --name node-fc -p 3000:3000 -v $$(pwd)/node/app:/home/node/app -d --network=node-network node-fc:latest
+	docker run --rm -it --name node-fc -p 3000:3000 -d --network=node-network node-fc:latest
 
 run-node-prod:
 	docker run --rm -it --name node-fc -d --network=node-network node-fc:latest
