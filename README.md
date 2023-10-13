@@ -19,6 +19,10 @@ Acessando no browser a url `localhost:8080` irá te retornar uma mensagem `Full 
 
 Para fins de testes, caso queira cadastrar novos usuários acesse a url `localhost:8080/api/v1/users/:name` onde :name é o nome do usuário que deseja cadastrar. Então, por exemplo, `localhost:8080/api/v1/users/foo` irá cadastrar o usuário como nome `foo` no banco de dados (que posteriormente pode ser acessado por `localhost:8080`).
 
+# Execução
+- `docker-compose-up -d`
+- `docker-compose-up -d --build` ("Re-builda" as imagens)
+
 # Referências
 - https://dev.to/logrocket/how-to-run-a-node-js-server-with-nginx-588
 - https://github.com/devfullcycle/fc-devops-docker/tree/main
