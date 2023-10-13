@@ -3,7 +3,7 @@ services:
   reverse-proxy:
     build:
       context: ./nginx
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.prod
     image: nginx-fc:latest
     container_name: nginx-fc
     networks:

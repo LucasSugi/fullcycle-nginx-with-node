@@ -10,7 +10,7 @@ O `nginx` deve atuar como proxy reverso para o `node.js` que por sua vez deve-se
 No arquivo `Makefile` existe alguns comandos para facilitar a testagem e desenvolvimento. O comando `make build` irá construir as imagens das 3 ferramentas. Posteriormete deve-se executar:
 - `make run-mysql`
 - `make run-node-prod`
-- `make run-nginx`
+- `make run-nginx-prod`
 
 **Atenção**
 - Cuidado ao executar o segundo comando `make run-node-prod`, pois pode ser que falhe por o `mysql` ainda não estar de pé.

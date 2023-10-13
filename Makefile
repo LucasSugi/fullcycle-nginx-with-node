@@ -1,4 +1,4 @@
-build: build-network build-mysql build-node-prod build-nginx
+build: build-network build-mysql build-node-prod build-nginx-prod
 
 build-network:
 	docker network ls | grep node-network > /dev/null || docker network create node-network
@@ -30,11 +30,14 @@ exec-node:
 build-nginx:
 	docker build -t nginx-fc:latest -f nginx/Dockerfile nginx/
 
-run-nginx:
-	docker run --rm --name nginx-fc -d -p 8080:80 --network=node-network nginx-fc:latest
+build-nginx-prod:
+	docker build -t nginx-fc:latest -f nginx/Dockerfile.prod nginx/
 
-run-nginx-debug:
-	docker run --rm --name nginx-fc -p 8080:80 --network=node-network nginx-fc:latest nginx-debug -g 'daemon off;'
+run-nginx:
+	docker run --rm --name nginx-fc -p 8080:80 --network=node-network nginx-fc:latest
+
+run-nginx-prod:
+	docker run --rm --name nginx-fc -d -p 8080:80 --network=node-network nginx-fc:latest
 
 exec-nginx:
 	docker exec -it nginx-fc bash
