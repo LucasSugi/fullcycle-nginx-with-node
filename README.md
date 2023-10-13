@@ -26,3 +26,4 @@ Para fins de testes, caso queira cadastrar novos usuários acesse a url `localho
 # Referências
 - https://dev.to/logrocket/how-to-run-a-node-js-server-with-nginx-588
 - https://github.com/devfullcycle/fc-devops-docker/tree/main
+- https://blog.logrocket.com/how-to-run-a-node-js-server-with-nginx/
