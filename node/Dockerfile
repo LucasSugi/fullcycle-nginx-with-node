@@ -1,4 +1,4 @@
-FROM node:14.17.0-slim
+FROM node:18
 WORKDIR /home/node/app
 COPY /app .
 RUN npm install --save
