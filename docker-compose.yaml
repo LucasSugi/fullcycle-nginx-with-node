@@ -20,6 +20,8 @@ services:
       dockerfile: Dockerfile.prod
     image: node-fc:latest
     container_name: node-fc
+    volumes:
+      - ./node/app:/home/node/app
     networks:
       - node-network
     depends_on:
