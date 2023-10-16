@@ -15,6 +15,7 @@ No arquivo `Makefile` existe alguns comandos para facilitar a testagem e desenvo
 **Atenção**
 - Cuidado ao executar o segundo comando `make run-node-prod`, pois pode ser que falhe por o `mysql` ainda não estar de pé.
 - Para o build da imagem do `mysql` foi necessário adicionar `--platform=x86_64` devido as configurações da minha máquina. Talvez a sua não precise se estiver usando linux.
+- Para o build da imagem do `node` foi necessário adicionar `--platform=arm64` devido as configurações da minha máquina. Talvez a sua não precise se estiver usando linux.
 
 # Uso da aplicação
 Acessando no browser a url `localhost:8080` irá te retornar uma mensagem `Full Cycle Rocks` e os usuários cadastrados previamente no banco (User 1, User 2 e User 3).
