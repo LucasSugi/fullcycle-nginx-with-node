@@ -32,6 +32,8 @@ services:
     build:
       context: ./mysql
       dockerfile: Dockerfile
+      args:
+        PLATFORM: x86_64
     image: mysql-fc:latest
     container_name: mysql-fc
     networks:
